@@ -1,0 +1,51 @@
+<nav class="navbar navbar-default navbar-fixed-top navbar-transparent">
+  <div class="container">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <%= link_to root_path do %>
+        <span><%= image_tag 'icons/logo.png', class: 'navbar-brand' %></span>
+      <% end %>
+    </div>
+
+
+    <ul class="nav navbar-nav navbar-right">
+
+      <% if user_signed_in? %><!-- ログインしている時 -->
+        <li>
+          <%= link_to '#' do %>
+            <%= image_tag 'icons/heart.png' %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to '#' do %>
+            <%= image_tag 'icons/camera.png' %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <%= image_tag 'icons/logout.png' %>
+          <% end %>
+        </li>
+        <li><%= link_to current_user.email %></li>
+      <% else %><!-- ログインしていない時 -->
+        <li>
+          <%= link_to new_user_registration_path do %>
+            <%= image_tag 'icons/register.png' %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_user_session_path do %>
+            <%= image_tag 'icons/login.png' %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

@@ -1,2 +1,21 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<script type="text/javascript">
+  $(function(){
+    $(".navbar").removeClass("navbar-devise");
+    $(".nabvar").addClass("navbar-default");
+  });
+</script>
+
+<div class="top-hero-wrapper">
+  <%= render 'partial/navbar' %>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 text-center">
+        <h1 class="text-white">Make you Happy</h1>
+        <h2 class="text-white">Fourthgram is a service that you can post photos.</h2>
+      </div>
+    </div>
+  </div>
+
+
+</div>
